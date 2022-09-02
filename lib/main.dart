@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sias/home.dart';
-import 'package:sias/login.dart';
 
 void main() {
   runApp(const MyApp());
