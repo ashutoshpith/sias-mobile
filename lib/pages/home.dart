@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[800],
+      backgroundColor: Colors.grey[800],
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
           backgroundColor: Colors.amber[800],
@@ -56,65 +56,91 @@ class _HomePageState extends State<HomePage> {
       ]),
       body: SafeArea(
           child: Center(
-        child: Column(children: [
-          SizedBox(height: 75),
-          Text(
-            "Sias",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
-          ),
-          SizedBox(height: 75),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: GestureDetector(
-                      onTap: signIn,
-                      child: Container(
-                        padding: EdgeInsets.all(25),
-                        decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Center(
-                          child: Text(
-                            "SignIn",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+        child: Container(
+          padding: EdgeInsets.all(12),
+          child: Column(children: [
+            SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      "Sias",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 32,
+                          color: Colors.white),
+                    ),
+                  ],
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.amber[700],
+                      borderRadius: BorderRadius.circular(12)),
+                  padding: EdgeInsets.all(12),
+                  child: Icon(Icons.notifications),
+                )
+              ],
+            ),
+            SizedBox(height: 75),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: GestureDetector(
+                        onTap: signIn,
+                        child: Container(
+                          padding: EdgeInsets.all(25),
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Center(
+                            child: Text(
+                              "SignIn",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: GestureDetector(
-                      onTap: signUp,
-                      child: Container(
-                        padding: EdgeInsets.all(25),
-                        decoration: BoxDecoration(
-                            color: Colors.blueAccent,
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Center(
-                          child: Text(
-                            "SignUp",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: GestureDetector(
+                        onTap: signUp,
+                        child: Container(
+                          padding: EdgeInsets.all(25),
+                          decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Center(
+                            child: Text(
+                              "SignUp",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ]),
+                  ],
+                ),
+              ],
+            ),
+          ]),
+        ),
       )),
     );
   }
