@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sias/home.dart';
+import 'package:sias/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
