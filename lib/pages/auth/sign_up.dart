@@ -3,21 +3,22 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:sias/pages/auth/sign_up.dart';
+import 'package:sias/pages/auth/sign_in.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _SignInState();
+  State<StatefulWidget> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
+  final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  signIn() {
-    log("signIn");
+  signUp() {
+    log("signUp");
     log(_emailController.text.trim());
     log(_passwordController.text.trim());
     "hello";
@@ -25,6 +26,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   void dispose() {
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -46,15 +48,35 @@ class _SignInState extends State<SignIn> {
                   ),
                   SizedBox(height: 75),
                   Text(
-                    "Hello Again",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
+                    "Be A Friend With Us",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "Welcome back !!!",
-                    style: TextStyle(fontSize: 24),
+                    "Welcome Having gifts for you !!!",
+                    style: TextStyle(fontSize: 20),
                   ),
                   SizedBox(height: 50),
+
+                  // name
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(12)),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: TextField(
+                          controller: _nameController,
+                          decoration: InputDecoration(
+                              border: InputBorder.none, hintText: "Name"),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15),
 
                   // email
                   Padding(
@@ -99,7 +121,7 @@ class _SignInState extends State<SignIn> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: GestureDetector(
-                      onTap: signIn,
+                      onTap: signUp,
                       child: Container(
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
@@ -107,7 +129,7 @@ class _SignInState extends State<SignIn> {
                             borderRadius: BorderRadius.circular(12)),
                         child: Center(
                             child: Text(
-                          "Sign In",
+                          "Sign Up",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -121,19 +143,19 @@ class _SignInState extends State<SignIn> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Not A Member ? ",
+                        "Already A Member ? ",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const SignUp(),
+                              builder: (context) => const SignIn(),
                             ),
                           );
                         },
                         child: Text(
-                          'Register now',
+                          'Sign In Now',
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
