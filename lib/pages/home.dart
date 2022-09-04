@@ -23,7 +23,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: Colors.amber[800],
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+          backgroundColor: Colors.amber[800],
+          icon: Icon(
+            Icons.home,
+            color: Colors.white,
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.message,
+            color: Colors.white,
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.person,
+            color: Colors.white,
+          ),
+          label: '',
+        ),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            label: ''),
+      ]),
       body: SafeArea(
           child: Center(
         child: Column(children: [
